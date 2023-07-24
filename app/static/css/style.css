@@ -76,7 +76,26 @@ h6,
 }
 
 
+
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url( app\static\img\toggler_icon.png);
+}
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+
+
+
 /*** Navbar ***/
+
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
@@ -115,7 +134,7 @@ h6,
     }
 
     .navbar .navbar-nav {
-        border-top: 1px solid #0011ffd5;
+        border-top: 1px solid #16D5FF;
     }
 }
 
