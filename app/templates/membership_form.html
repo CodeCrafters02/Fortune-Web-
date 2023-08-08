@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Membership Form {% endblock title %}
+
+
+{% block main-content %}
+
+<style media="screen">
+    @import url('https://fonts.googleapis.com/css?family=Lobster+Two:700|Poppins&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: #000000;
+    font-family: 'Poppins',sans-serif;
+  }
+  
+  .center,.start-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .start-btn a{
+    font-size: 22px;
+    background: #000000;
+    color: #02242b;
+    padding: 15px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  
+  }
+  .modal-box{
+    top: 40%;
+    opacity: 0;
+    visibility: hidden;
+    background: black;
+    height: auto;
+    width: 480px;
+    padding: 18px 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+  }
+  
+  .start-btn.show-modal{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .modal-box.show-modal{
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+    transition: .4s;
+  }
+  .modal-box .fa-times{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #16D5FF;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    margin: 10px;
+  
+    color: #000000;
+    font-size: 18px;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .fa-times:hover{
+    font-size: 22px;
+  }
+  
+  
+  .form_container{
+    background: #000000;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 3px;
+  }
+  
+  .form_container .form_item{
+    margin-bottom: 25px;
+  }
+  
+  .form_container .form_wrap.form_grp{
+    display: flex;
+  }
+  
+  .form_container .form_wrap.form_grp .form_item{
+    width: 50%;
+  }
+  
+  .form_container .form_wrap.form_grp .form_item:first-child{
+    margin-right: 4%;
+  }
+  
+  .form_container .form_item label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form_container .form_item input,
+  .form_container .form_item select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #16D5FF;
+    border-radius: 3px;
+  }
+   
+  .form_container .btn input[type="submit"]{
+    background: #16D5FF;
+    border: 1px solid #16D5FF;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #000000;
+  }
+  </style>
+
+
+
+<h1 class="display-6" style="color: #16D5FF; font-family: 'Times New Roman', Times, serif; margin-top: 20px;">Join Us Now</h1>
+<p class="text-primary fs-5 mb-5"  style="color: #16D5FF; font-family: 'Times New Roman', Times, serif;">"Fortune Edu: Illuminating Your Path to Trading Success!"</p>
+<div class="center modal-box">
+
+    <d-iv class="fas fa-times"></div>
+
+
+
+<div class="form_container" style="width:500px; margin-left: 425px;">
+<form name="form" method="POST">
+ 
+     {% csrf_token %}
+     {{ form.as_p }}
+ 
+ <div class="btn">
+   <input type="submit" value="Get Started">
+ </div>
+</form>
+</div>
+</div>
+
+
+
+{% endblock main-content %}
